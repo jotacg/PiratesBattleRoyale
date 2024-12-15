@@ -1,0 +1,36 @@
+
+Diseño del juego:
+
+Se va a realizar un battle royale de Piratas donde el jugador controlará un barco y tendra que eliminar al resto de 
+jugadores.
+
+El jugador podrá elegir entre 3 tripulaciones diferentes (cada una con sus virtudes):
+	- Corsarios (La armada privada)
+	- Piratas rebeldes
+	- Marineros de la corona
+
+El dedarrollo del juego se va a realizar en una cuadricula que representará el mar donde los barcos podrán navegar, 
+luchar contra otros jugadores, comprar mejoras para su buque...
+
+En cada turno el jugador podrá elegir entre varias acciones a realizar:
+	- Navegar: Te permitirá moverte por el mapa
+	- Consultar el mapa: Te permitira ver donde estan el resto de jugadores, tesoros, islas...
+	- Reparar el barco: Te permitirá recuperar algo de salud de tu buque
+	- Accion: Esta opcion dependerá de los objetos que tengas en las casillas adyacentes:
+		- Atacar a otro barco
+		- Ir a una isla para comprar mejoras para tu barco
+		- Buscar en el fondo marino: Encontraras dinero entre un rango de cantidades 
+El jugador podrá comprobar la vida de otros barcos adyacentes sin necesidad de acabar el turno
+
+Cada barco tendrá una serie de atributos:
+	- Vida del barco
+	- Potencia de fuego
+	- Dinero: Utilizado para comprar mejoras
+
+Algoritmo de la IA:
+	el orden de acciones para la ia será el siguiente:
+	1.Si esta al lado de otro barco -> atacar
+	2.Si esta por debajo de 50 de vida -> curarse
+	3.Si tiene menos de 100 de oro  y no esta cerca de una isla -> buscar en el fondo del mar
+	4.Si esta al lado de una isla y tiene dinero comprar una mejora para el barco
+	5.Si no tiene otra opcion -> navegar por el mar
