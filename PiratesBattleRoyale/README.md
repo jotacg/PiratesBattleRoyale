@@ -2,25 +2,25 @@
 
 ## Descripcion del proyecto
 
-Se ha realizado un minijuego donde el usuario controlará un barco y deberá pelear contra otros buques para ser la 
-ultima tripulación en el ancho mar.
+Se ha realizado un minijuego donde el usuario controlara un barco y debera pelear contra otros buques para ser la 
+ultima tripulacion en el ancho mar.
 
-Este proyecto se gestionará con inputs por la terminal y se jugará por turnos, es decir, el jugador realizará su accion y le seguirá los 
+Este proyecto se gestionara con inputs por la terminal y se jugara por turnos, es decir, el jugador realizara su accion y le seguira los 
 diferentes barcos controlados por la IA.
-El juego acabará cuando el jugador sea el ultimo barco en pie o este pierda todos sus puntos de vida.
+El juego acabara cuando el jugador sea el ultimo barco en pie o este pierda todos sus puntos de vida.
 
 ## Inicio de la partida
 
-Una vez se comience la partida se necesitarán realizar unas configuraciones inicales para poder jugar. El juego te pedirá
+Una vez se comience la partida se necesitaran realizar unas configuraciones inicales para poder jugar. El juego te pedira
 se escribas una seria de inputs para personalizar la partida:
-1. Dimensiones del mapa: se creará un mapa de NxN para poder posicionar los elementos de la partida.
-2. Numero de islas: Se le pedirá al jugador que seleccione un numero de islas para generarlas en posiciones aleatoria en el mapa previamente delimitado.
-3. Numero de jugadores: Se deberá seleccionar un numero de barcos que jugarán la partida.
-Por cada jugador seleccionado se deberá proporcionar un nombre y una tripulación para el barco (cada tripulacion tendra unas caracteísticas diferentes).
+1. Dimensiones del mapa: se creara un mapa de NxN para poder posicionar los elementos de la partida.
+2. Numero de islas: Se le pedira al jugador que seleccione un numero de islas para generarlas en posiciones aleatoria en el mapa previamente delimitado.
+3. Numero de jugadores: Se debera seleccionar un numero de barcos que jugaran la partida.
+Por cada jugador seleccionado se debera proporcionar un nombre y una tripulacion para el barco (cada tripulacion tendra unas caracteisticas diferentes).
 
-## Jerarquía de clases
+## Jerarquia de clases
 
-Se ha desarrollado una clase BarcoBase que contiene todos los atributos y métodos necesario para el control del barco durante el juego.
+Se ha desarrollado una clase BarcoBase que contiene todos los atributos y metodos necesario para el control del barco durante el juego.
 1. Atributos:
 
 	* Nombre: Identificador del barco.
@@ -31,7 +31,7 @@ Se ha desarrollado una clase BarcoBase que contiene todos los atributos y método
 	* Posicion: Atributo que controla la posicion del barco en el mapa en coordenadas XY.
 
 Se ha desarrollado 3 clases hijo que heredan de BarcoBase y modifican ciertos atributos de la clase padre:
-1. Tipos de tripulación:
+1. Tipos de tripulacion:
 
 	* Piratas: Temibles, pero pobres, hombres que no conocen el miedo. Tienen una gran potencia de fuego a costa de su dañado barco (vida) y dinero.
 	* Marineros: A diferencia de los piratas no tienen mucha cadencia de fuego pero lo suplen con un barco reforzado y mucho dinero.
@@ -40,32 +40,32 @@ Se ha desarrollado 3 clases hijo que heredan de BarcoBase y modifican ciertos at
 ## Desarrollo de la partida
 
 ### Inicio de ronda
-Al principio de cada turno el jugador podrá ver el numero de barcos que siguen vivos, la vida actual de cada uno y los elementos que rodean su posicion:
+Al principio de cada turno el jugador podra ver el numero de barcos que siguen vivos, la vida actual de cada uno y los elementos que rodean su posicion:
 1. "J": Caracter que representa el jugador.
 1. "E": Caracter que representa a un enemigo.
 1. "I": Caracter que representa a una isla.
 1. "~": Caracter que representa agua.
 
-Ademas el jugador pordrá ver las estidisticas actualies de su barco.
+Ademas el jugador pordra ver las estidisticas actualies de su barco.
 
 ### Turno del jugador
-En cada turno el jugador podrá elegir entre varias acciones a realizar:
-1. Navegar: Te permitirá moverte por el mapa.
+En cada turno el jugador podra elegir entre varias acciones a realizar:
+1. Navegar: Te permitira moverte por el mapa.
 1. Consultar el mapa: Te permitira ver donde estan el resto de jugadores, tesoros, islas...
-1. Reparar el barco: Te permitirá recuperar algo de salud de tu buque.
-1. Accion: Esta opcion dependerá de los objetos que tengas en las casillas adyacentes:
+1. Reparar el barco: Te permitira recuperar algo de salud de tu buque.
+1. Accion: Esta opcion dependera de los objetos que tengas en las casillas adyacentes:
 	* Atacar a otro barco.
 	* Ir a una isla para comprar mejoras para tu barco.
 	* Buscar en el fondo marino: Encontraras dinero entre un rango de cantidades.
 
-Una vez el jugador haya realizado su turno el resto de enemigos realizará su turno de forma secuencial.
+Una vez el jugador haya realizado su turno el resto de enemigos realizara su turno de forma secuencial.
 
 ### Algoritmo IA enemigo.
 
-Se ha generado un pequeño algoritmo para los enemigos. Los enemigos interán realizar una serie de acciones:
-* El orden será el siguiente:
-	* Si esta al lado de otro barco -> Atacará a un barco adyacente.
-	* Si esta por debajo de 50 de vida -> La tripulacion reparará el barco.
-	* Si tiene menos de 100 de oro  y no esta cerca de una isla -> Buscará dinero en el fondo del mar.
-	* Si esta al lado de una isla y tiene dinero -> Mejorará su potencia de fuego.
-	* Si no tiene otra opcion -> Navegará por el mar.
+Se ha generado un pequeño algoritmo para los enemigos. Los enemigos interan realizar una serie de acciones:
+* El orden sera el siguiente:
+	* Si esta al lado de otro barco -> Atacara a un barco adyacente.
+	* Si esta por debajo de 50 de vida -> La tripulacion reparara el barco.
+	* Si tiene menos de 100 de oro  y no esta cerca de una isla -> Buscara dinero en el fondo del mar.
+	* Si esta al lado de una isla y tiene dinero -> Mejorara su potencia de fuego.
+	* Si no tiene otra opcion -> Navegara por el mar.

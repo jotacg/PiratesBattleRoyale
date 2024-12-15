@@ -16,9 +16,6 @@
     <Filter Include="Diseño">
       <UniqueIdentifier>{8aaeb1d0-7761-403d-8eda-607666367e7e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Enunciado">
-      <UniqueIdentifier>{730db3b2-32f7-46b2-b2d7-ff54076bc803}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Diseño.txt">
@@ -63,9 +60,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\Users\casas\Downloads\proyecto_Cpp_2024.pdf">
-      <Filter>Enunciado</Filter>
-    </None>
     <None Include="README.md" />
   </ItemGroup>
 </Project>

@@ -145,7 +145,6 @@
     <ClCompile Include="Pirata.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\Users\casas\Downloads\proyecto_Cpp_2024.pdf" />
     <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
