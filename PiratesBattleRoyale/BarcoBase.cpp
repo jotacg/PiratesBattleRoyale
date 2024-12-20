@@ -142,6 +142,10 @@ void BarcoBase::navegar(std::string** mapa, int tamanio, bool jugador)
 		setPosicion(nuevaY, nuevaX);
 		std::cout << nombre << " se ha movido" << std::endl;
 	}
+	else if(jugador)	// En caso de que el jugador se intente mover a una poscion no valida, se indicara que no es una posicion valida
+	{
+		std::cout << "Posicion no valida" << std::endl;
+	}
 
 }
 // Metodo para reparar el barco (en caso de que supere la vida maxima se pondrá la maxima)
@@ -155,6 +159,7 @@ void BarcoBase::repararBarco()
 	{
 		setVida(vida + 20);
 	}
+	std::cout << nombre << " ha reparado el barco" << std::endl;
 }
 
 // Metodo para buscar dinero en el fondo del mar
@@ -171,7 +176,7 @@ void BarcoBase::buscarDinero()
 	std::uniform_int_distribution<> distrib(min_val, max_val);
 
 	int dineroEncontrado = distrib(gen);
-	std::cout << nombre << " ha encontrado " << dineroEncontrado << "!" << std::endl;
+	std::cout << nombre << " ha buscado oro en el fondo del mar y ha encontrado " << dineroEncontrado << " monedas!" << std::endl;
 	// Generar un número aleatorio
 	dinero += dineroEncontrado;
 }

@@ -59,6 +59,7 @@ int main()
 	while (continuar == "s")
 	{
 		std::cout << "######### RONDA "<< numRonda<<" ######### " << std::endl;
+		partida.mostrarNumJugadores();
 		partida.mostrarVidaJugadores();
 
 		std::cout << "######### CASILLAS ADYACENTES ######### " << std::endl;

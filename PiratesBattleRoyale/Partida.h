@@ -3,6 +3,9 @@
 #include <string>
 #include <random>
 #include "BarcoBase.h"
+#include "Pirata.h"
+#include "Marinero.h"
+#include "Corsario.h"
 
 class Partida
 {
@@ -26,6 +29,7 @@ public:
 	std::string** getMapa();
 	BarcoBase** getJugadores();
 	BarcoBase* getBarco(int* posBarco);
+	void mostrarNumJugadores();
 	void mostrarVidaJugadores();
 	void elegirTurno(BarcoBase* jugador);
 	void elegirAccion(BarcoBase* jugador);

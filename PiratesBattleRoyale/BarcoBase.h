@@ -16,7 +16,7 @@ private:
 public:
 	static int contador;
 	BarcoBase(std::string nombre, int vida, int coordX = 0, int coordY = 0);
-	~BarcoBase();
+	virtual ~BarcoBase();
 	std::string getNombre();
 	int getVida();
 	void setVida(int nuevaVida);

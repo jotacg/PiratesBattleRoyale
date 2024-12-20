@@ -143,6 +143,33 @@ BarcoBase* Partida::getBarco(int * posBarco)
     return nullptr;
 }
 
+void Partida::mostrarNumJugadores()
+{
+    int numPiratas = 0;
+    int numMarineros = 0;
+    int numCorsarios = 0;
+    BarcoBase** jugadores = getJugadores();
+
+    for (int i = 0; i < numJugadores; i++)
+    {
+        if (dynamic_cast<Pirata*>(jugadores[i]))
+        {
+            numPiratas++;
+        }
+        if (dynamic_cast<Marinero*>(jugadores[i]))
+        {
+            numMarineros++;
+        }
+        if (dynamic_cast<Corsario*>(jugadores[i]))
+        {
+            numCorsarios++;
+        }
+    }
+    std::cout << "Quedan " << numPiratas << " piratas vivos." << std::endl;
+    std::cout << "Quedan " << numMarineros << " marineros vivos." << std::endl;
+    std::cout << "Quedan " << numCorsarios << " corsarios vivos." << std::endl;
+}
+
 // Metodo para mostrar la vida de los jugadores en cada ronda (iterando por la lista de jugadores)
 void Partida::mostrarVidaJugadores()
 {
@@ -269,12 +296,10 @@ void Partida::turnoIA(BarcoBase* jugador)
     }
     else if (jugador->getVida() < 50)
     {
-        std::cout << jugador->getNombre() << " ha reparado el barco" << std::endl;
         jugador->repararBarco();
     }
     else if (jugador->getDinero() < 500 and !jugador->islaCerca(mapa, filas))
     {
-        std::cout << jugador->getNombre() << " ha buscado dinero" << std::endl;
         jugador->buscarDinero();
     }
     else if (jugador->islaCerca(mapa, filas) && jugador->getDinero() >= 500)
